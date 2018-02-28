@@ -1,8 +1,16 @@
 <?php
 
+/*
+ * This file is part of emanci/lumen-request package.
+ *
+ * (c) emanci <zhengchaopu@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Emanci\LumenRequest;
 
-use Emanci\LumenRequest\FormRequest;
 use Illuminate\Contracts\Validation\ValidatesWhenResolved;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,16 +42,13 @@ class FormRequestServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**
      * Initialize the form request with data from the given request.
-     * 
-     * @param  FormRequest $form
-     * @param  Request     $current
-     * 
-     * @return void
+     *
+     * @param FormRequest $form
+     * @param Request     $current
      */
     protected function initializeRequest(FormRequest $form, Request $current)
     {

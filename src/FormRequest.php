@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of emanci/lumen-request package.
+ *
+ * (c) emanci <zhengchaopu@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Emanci\LumenRequest;
 
 use Illuminate\Contracts\Container\Container;
@@ -20,6 +29,47 @@ abstract class FormRequest extends Request implements ValidatesWhenResolved
      * @var \Illuminate\Contracts\Container\Container
      */
     protected $container;
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    abstract public function rules();
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [];
+    }
+
+    /**
+     * Set the container implementation.
+     *
+     * @param \Illuminate\Contracts\Container\Container $container
+     *
+     * @return $this
+     */
+    public function setContainer(Container $container)
+    {
+        $this->container = $container;
+
+        return $this;
+    }
 
     /**
      * Get the validator instance for the request.
@@ -46,8 +96,8 @@ abstract class FormRequest extends Request implements ValidatesWhenResolved
     /**
      * Create the default validator instance.
      *
-     * @param  \Illuminate\Contracts\Validation\Factory  $factory
-     * 
+     * @param \Illuminate\Contracts\Validation\Factory $factory
+     *
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function createDefaultValidator(ValidationFactory $factory)
@@ -73,9 +123,7 @@ abstract class FormRequest extends Request implements ValidatesWhenResolved
      *
      * @throws \Illuminate\Validation\ValidationException
      *
-     * @param  \Illuminate\Contracts\Validation\Validator  $validator
-     * 
-     * @return void
+     * @param \Illuminate\Contracts\Validation\Validator $validator
      */
     protected function failedValidation(Validator $validator)
     {
@@ -85,53 +133,12 @@ abstract class FormRequest extends Request implements ValidatesWhenResolved
     /**
      * Format the errors from the given Validator instance.
      *
-     * @param  \Illuminate\Contracts\Validation\Validator  $validator
-     * 
+     * @param \Illuminate\Contracts\Validation\Validator $validator
+     *
      * @return array
      */
     protected function formatErrors(Validator $validator)
     {
         return $validator->getMessageBag()->toArray();
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    abstract public function rules();
-
-     /**
-     * Get custom messages for validator errors.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [];
-    }
-
-    /**
-     * Get custom attributes for validator errors.
-     *
-     * @return array
-     */
-    public function attributes()
-    {
-        return [];
-    }
-
-    /**
-     * Set the container implementation.
-     *
-     * @param  \Illuminate\Contracts\Container\Container  $container
-     * 
-     * @return $this
-     */
-    public function setContainer(Container $container)
-    {
-        $this->container = $container;
-
-        return $this;
     }
 }
