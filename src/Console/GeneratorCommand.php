@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Emanci\LumenRequest;
+namespace Emanci\LumenRequest\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;

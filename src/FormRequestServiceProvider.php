@@ -11,6 +11,7 @@
 
 namespace Emanci\LumenRequest;
 
+use Emanci\LumenRequest\Console\RequestMakeCommand;
 use Illuminate\Contracts\Validation\ValidatesWhenResolved;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,6 +43,31 @@ class FormRequestServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerCommands();
+    }
+
+    /**
+     * Register the given commands.
+     *
+     * @return void
+     */
+    protected function registerCommands()
+    {
+        $this->registerRequestMakeCommand();
+
+        $this->commands('command.request.make');
+    }
+
+    /**
+     * Register the command.
+     *
+     * @return void
+     */
+    protected function registerRequestMakeCommand()
+    {
+        $this->app->singleton('command.request.make', function ($app) {
+            return new RequestMakeCommand($app['files']);
+        });
     }
 
     /**
