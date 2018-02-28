@@ -1,9 +1,17 @@
 <?php
 
+/*
+ * This file is part of emanci/lumen-request package.
+ *
+ * (c) emanci <zhengchaopu@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Tests;
 
 use Illuminate\Http\Request;
-use Laravel\Lumen\Application;
 use Tests\Http\FooFormRequest;
 
 class FormRequestTest extends TestCase
@@ -36,8 +44,8 @@ class FormRequestTest extends TestCase
     }
 
     /**
-     * @expectedException        Illuminate\Validation\UnauthorizedException
-     * @expectedExceptionMessage 
+     * @expectedException        \Illuminate\Validation\UnauthorizedException
+     * @expectedExceptionMessage
      */
     public function testValidationForAuthorizationException()
     {
