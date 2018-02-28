@@ -59,10 +59,10 @@ class FormRequestTest extends TestCase
 
     protected function storeFoo(array $input)
     {
-        $this->app->router->addRoute(['POST'], '/users/store', function (FooFormRequest $request) {
+        $this->app->router->addRoute(['POST'], '/foo/store', function (FooFormRequest $request) {
             return response($request->all());
         });
 
-        return $this->app->handle(Request::create('/users/store', 'POST', $input));
+        return $this->app->handle(Request::create('/foo/store', 'POST', $input));
     }
 }
