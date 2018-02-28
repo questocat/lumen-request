@@ -15,7 +15,11 @@ class FormRequestServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->afterResolving(ValidatesWhenResolved::class, function ($resolved) {
-            $resolved->validateResolved();
+            if (method_exists($resolved, 'validate')) {
+                $resolved->validate();
+            } else {
+                $resolved->validateResolved();
+            }
         });
 
         $this->app->resolving(FormRequest::class, function ($request, $app) {
