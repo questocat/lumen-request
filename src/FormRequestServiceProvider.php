@@ -48,8 +48,6 @@ class FormRequestServiceProvider extends ServiceProvider
 
     /**
      * Register the given commands.
-     *
-     * @return void
      */
     protected function registerCommands()
     {
@@ -60,8 +58,6 @@ class FormRequestServiceProvider extends ServiceProvider
 
     /**
      * Register the command.
-     *
-     * @return void
      */
     protected function registerRequestMakeCommand()
     {
