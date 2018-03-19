@@ -24,9 +24,9 @@ class FormRequestTest extends TestCase
 
         $response = $this->storeFoo($input);
 
-        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertEquals(422, $response->getStatusCode());
 
-        $this->assertEquals($response->getContent(), json_encode(['email' => ['The email field is required.']]));
+        $this->assertEquals($response->getContent(), json_encode(['email' => ['email xxx']]));
     }
 
     public function testValidationPass()

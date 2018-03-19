@@ -27,4 +27,11 @@ class FooFormRequest extends FormRequest
             'email' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'email xxx',
+        ];
+    }
 }

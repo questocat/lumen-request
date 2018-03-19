@@ -15,6 +15,7 @@ use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 use Illuminate\Contracts\Validation\ValidatesWhenResolved;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidatesWhenResolvedTrait;
 use Illuminate\Validation\ValidationException;
@@ -127,7 +128,21 @@ abstract class FormRequest extends Request implements ValidatesWhenResolved
      */
     protected function failedValidation(Validator $validator)
     {
-        throw new ValidationException($validator, $this->formatErrors($validator));
+        throw new ValidationException($validator, $this->buildFailedValidationResponse(
+            $this->formatValidationErrors($validator)
+        ));
+    }
+
+    /**
+     * Build a failed validation response.
+     *
+     * @param $errors
+     *
+     * @return JsonResponse
+     */
+    protected function buildFailedValidationResponse($errors)
+    {
+        return new JsonResponse($errors, 422);
     }
 
     /**
@@ -137,8 +152,8 @@ abstract class FormRequest extends Request implements ValidatesWhenResolved
      *
      * @return array
      */
-    protected function formatErrors(Validator $validator)
+    protected function formatValidationErrors(Validator $validator)
     {
-        return $validator->getMessageBag()->toArray();
+        return $validator->errors()->getMessages();
     }
 }
