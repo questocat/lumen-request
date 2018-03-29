@@ -11,9 +11,9 @@
 
 namespace Tests\Http;
 
-use Emanci\LumenRequest\FormRequest;
+use Emanci\LumenRequest\InputRequest;
 
-class FooFormRequest extends FormRequest
+class FooInputRequest extends InputRequest
 {
     public function authorize()
     {

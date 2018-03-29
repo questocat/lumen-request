@@ -2,9 +2,9 @@
 
 namespace DummyNamespace;
 
-use Emanci\LumenRequest\FormRequest;
+use Emanci\LumenRequest\InputRequest;
 
-class DummyClass extends FormRequest
+class DummyClass extends InputRequest
 {
     /**
      * Determine if the user is authorized to make this request.

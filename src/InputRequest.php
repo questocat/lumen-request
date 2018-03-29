@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidatesWhenResolvedTrait;
 use Illuminate\Validation\ValidationException;
 
-abstract class FormRequest extends Request implements ValidatesWhenResolved
+abstract class InputRequest extends Request implements ValidatesWhenResolved
 {
     use ValidatesWhenResolvedTrait;
 

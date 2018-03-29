@@ -11,7 +11,7 @@
 
 namespace Tests;
 
-use Emanci\LumenRequest\FormRequestServiceProvider;
+use Emanci\LumenRequest\InputRequestServiceProvider;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Testing\TestCase as BaseTestCase;
@@ -32,7 +32,7 @@ class TestCase extends BaseTestCase
 
         $app->singleton(ExceptionHandler::class, Handler::class);
 
-        $app->register(FormRequestServiceProvider::class);
+        $app->register(InputRequestServiceProvider::class);
 
         return $app;
     }

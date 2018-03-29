@@ -12,9 +12,9 @@
 namespace Tests;
 
 use Illuminate\Http\Request;
-use Tests\Http\FooFormRequest;
+use Tests\Http\FooInputRequest;
 
-class FormRequestTest extends TestCase
+class InputRequestTest extends TestCase
 {
     public function testValidationFailed()
     {
@@ -59,7 +59,7 @@ class FormRequestTest extends TestCase
 
     protected function storeFoo(array $input)
     {
-        $this->app->router->addRoute(['POST'], '/foo/store', function (FooFormRequest $request) {
+        $this->app->router->addRoute(['POST'], '/foo/store', function (FooInputRequest $request) {
             return response($request->all());
         });
 

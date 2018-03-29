@@ -16,7 +16,7 @@ use Illuminate\Contracts\Validation\ValidatesWhenResolved;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
 
-class FormRequestServiceProvider extends ServiceProvider
+class InputRequestServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application events.
@@ -31,7 +31,7 @@ class FormRequestServiceProvider extends ServiceProvider
             }
         });
 
-        $this->app->resolving(FormRequest::class, function ($request, $app) {
+        $this->app->resolving(InputRequest::class, function ($request, $app) {
             $this->initializeRequest($request, $app['request']);
 
             $request->setContainer($app);
@@ -69,10 +69,10 @@ class FormRequestServiceProvider extends ServiceProvider
     /**
      * Initialize the form request with data from the given request.
      *
-     * @param FormRequest $form
-     * @param Request     $current
+     * @param InputRequest $form
+     * @param Request      $current
      */
-    protected function initializeRequest(FormRequest $form, Request $current)
+    protected function initializeRequest(InputRequest $form, Request $current)
     {
         $files = $current->files->all();
 

@@ -25,7 +25,7 @@ class RequestMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Create a new form request class';
+    protected $description = 'Create a new input request class';
 
     /**
      * The type of class being generated.
