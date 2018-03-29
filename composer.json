@@ -1,7 +1,7 @@
 {
     "name": "emanci/lumen-request",
-    "description": "Form request is a package for Lumen",
-    "keywords": ["form-request-validation", "form-request", "lumen", "request"],
+    "description": "Input request is a package for Lumen",
+    "keywords": ["request-validation", "lumen-request", "lumen-request-validation"],
     "license": "MIT",
     "authors": [{
         "name": "emanci",
