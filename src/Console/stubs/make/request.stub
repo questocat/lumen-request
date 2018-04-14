@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Emanci\LumenRequest\InputRequest;
+use Questocat\LumenRequest\InputRequest;
 
 class DummyClass extends InputRequest
 {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of emanci/lumen-request package.
+ * This file is part of questocat/lumen-request package.
  *
  * (c) emanci <zhengchaopu@gmail.com>
  *
@@ -11,7 +11,7 @@
 
 namespace Tests;
 
-use Emanci\LumenRequest\InputRequestServiceProvider;
+use Questocat\LumenRequest\InputRequestServiceProvider;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Testing\TestCase as BaseTestCase;
