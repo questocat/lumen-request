@@ -3,7 +3,7 @@
 /*
  * This file is part of questocat/lumen-request package.
  *
- * (c) emanci <zhengchaopu@gmail.com>
+ * (c) questocat <zhengchaopu@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -11,7 +11,7 @@
 
 namespace Questocat\LumenRequest;
 
-use Emanci\LumenRequest\Console\RequestMakeCommand;
+use Questocat\LumenRequest\Console\RequestMakeCommand;
 use Illuminate\Contracts\Validation\ValidatesWhenResolved;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\HttpFoundation\Request;

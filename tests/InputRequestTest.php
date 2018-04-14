@@ -3,7 +3,7 @@
 /*
  * This file is part of questocat/lumen-request package.
  *
- * (c) emanci <zhengchaopu@gmail.com>
+ * (c) questocat <zhengchaopu@gmail.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -19,7 +19,7 @@ class InputRequestTest extends TestCase
     public function testValidationFailed()
     {
         $input = [
-            'name' => 'emanci',
+            'name' => 'questocat',
         ];
 
         $response = $this->storeFoo($input);
@@ -32,7 +32,7 @@ class InputRequestTest extends TestCase
     public function testValidationPass()
     {
         $input = [
-            'name' => 'emanci',
+            'name' => 'questocat',
             'email' => 'zhengchaopu@gmail.com',
         ];
 
