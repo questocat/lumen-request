@@ -1,6 +1,6 @@
 <?php
 $header = <<<'EOF'
-This file is part of emanci/lumen-request package.
+This file is part of questocat/lumen-request package.
 
 (c) emanci <zhengchaopu@gmail.com>
 
