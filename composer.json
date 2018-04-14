@@ -1,10 +1,10 @@
 {
-    "name": "emanci/lumen-request",
+    "name": "questocat/lumen-request",
     "description": "Input request is a package for Lumen",
     "keywords": ["request-validation", "lumen-request", "lumen-request-validation"],
     "license": "MIT",
     "authors": [{
-        "name": "emanci",
+        "name": "questocat",
         "email": "zhengchaopu@gmail.com"
     }],
     "require": {
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Emanci\\LumenRequest\\": "src/"
+            "Questocat\\LumenRequest\\": "src/"
         }
     },
     "autoload-dev": {
