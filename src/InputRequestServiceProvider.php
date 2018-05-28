@@ -11,9 +11,9 @@
 
 namespace Questocat\LumenRequest;
 
-use Questocat\LumenRequest\Console\RequestMakeCommand;
 use Illuminate\Contracts\Validation\ValidatesWhenResolved;
 use Illuminate\Support\ServiceProvider;
+use Questocat\LumenRequest\Console\RequestMakeCommand;
 use Symfony\Component\HttpFoundation\Request;
 
 class InputRequestServiceProvider extends ServiceProvider

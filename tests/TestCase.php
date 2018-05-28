@@ -11,10 +11,10 @@
 
 namespace Tests;
 
-use Questocat\LumenRequest\InputRequestServiceProvider;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Testing\TestCase as BaseTestCase;
+use Questocat\LumenRequest\InputRequestServiceProvider;
 use Tests\Exceptions\Handler;
 
 class TestCase extends BaseTestCase
